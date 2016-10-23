@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Facility;
+use App\ShelterResource;
+
+
 class FacilitiesController extends Controller
 {
     /**
@@ -34,7 +37,13 @@ class FacilitiesController extends Controller
      * @return void
      */
     public function show(Facility $facility) {
-        return view('facilities.show', compact('facility'));
-    
+        if ($facility->is_shelter == 1) {
+            $sResources = ShelterResource::where('facility_id', $facility->id)->get();
+            //dd($sResources);
+            return view('facilities.show', compact('facility', 'sResources'));
+        }
+        else {
+            return view('facilities.show', compact('facility'));
+        }
     }
 }
