@@ -44,7 +44,27 @@ class ClientsController extends Controller
      * 
      * @return void
      */
+    public function create() {
+    	return view('clients.create');
+    }
+    
+    /**
+     * 
+     * 
+     * @return void
+     */
     public function store(Request $request) {
+    	$clientid = Client::max('UUID')+1;
+    	//dd($clientid);
+    	// creates the client
+    	$newClient = Client::create([
+            'First_Name' => $request['First_Name'],
+            'Middle_Name' => $request['Middle_Name'],
+            'Last_Name' => $request['Last_Name'],
+            'DOB' => $request['DOB'],
+            'SSN' => $request['SSN'],
+            'UUID' =>$clientid
+        ]);
     	return "here";
     }
 }

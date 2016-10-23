@@ -26,6 +26,7 @@ Route::group(['middlewareGroup' => 'web'], function () {
 
 	//Clients
 	Route::get('/clients', 'ClientsController@index'); // primary
+	Route::get('/clients/create', 'ClientsController@create'); // form for creating a client
 	Route::get('/clients/{id}', 'ClientsController@show'); // shows individual user data
 	Route::get('/clients/create', 'ClientsController@create'); // form for creating a client
 	Route::post('/clients', 'ClientsController@store'); //storing of data

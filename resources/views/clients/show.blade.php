@@ -9,8 +9,8 @@
                 <th class="col-md-1">Last Name</th>
                 <th class="col-md-1">First Name</th>
                 <th class="col-md-1">DOB</th>
-                <th class="col-md-1"></th>
-                <th class="col-md-1"></th>
+                <th class="col-md-1">SSN</th>
+                <th class="col-md-1">Gender</th>
                 <th class="col-md-1"></th>
                 <th class="col-md-1"></th>
                 <th class="col-md-1"></th>
@@ -25,17 +25,18 @@
                 <td>{{ $client->Last_Name }}</td>
                 <td>{{ $client->First_Name }}</td>
                 <td>{{ $client->DOB }}</td>
-                <td>{{ $client->DOB }}</td>
-                <td>{{ $client->DOB }}</td>
-                <td>{{ $client->DOB }}</td>
-                <td>{{ $client->DOB }}</td>
-                <td>{{ $client->DOB }}</td>
-                <td>{{ $client->DOB }}</td>
-                <td>{{ $client->DOB }}</td>
-                <td>{{ $client->DOB }}</td>
-                <td>{{ $client->DOB }}</td>
+                <td>{{ $client->SSN }}</td>
+                <td>@if($client->gender == 0)Male @else Female @endif</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
         </tbody>
     </table>
+    Assign to a bed?
+    
 </div>
 @endsection

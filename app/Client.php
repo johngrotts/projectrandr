@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-	protected $fillable = [];  // allows array assigning
+	protected $fillable = ['First_Name', 'Middle_Name', 'Last_Name', 'DOB', 'SSN', 'UUID'];  // allows array assigning
 
     
 }
