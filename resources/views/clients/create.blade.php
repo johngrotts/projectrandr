@@ -21,6 +21,10 @@
 				<label for="SSN">SSN</label> 
 			<input type="text" name="SSN" class="form-control" value="{{ old('SSN') }}" placeholder="SSN">
 		</div>
+		<div class="form-group">
+				<label for="DOB">DOB</label> 
+			<input type="text" name="DOB" class="form-control" value="{{ old('DOB') }}" placeholder="DOB">
+		</div>
 
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary">Add Client</button>

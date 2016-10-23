@@ -36,7 +36,38 @@
             </tr>
         </tbody>
     </table>
-    Assign to a bed?
-    
+    <hr>
+    <h3>Find a Shelter</h3>
+    @if ($csrec == "TRUE")
+    <form method="POST" action="/clients/assignbed" class="client-form">
+        {{ csrf_field() }} {{-- token that protects the form --}}
+        <input name="clientid" type="hidden" value="{{ $client->UUID }}">
+        <div class="form-group">
+            <label for="client_id">Facility</label> 
+            <select class="form-control" name="shelter_id"> 
+            <option value=''></option>
+            @foreach ($sResources as $sResource)
+                <option value="{{ $sResource->id }}">{{ $sResource->facility->facility_name }} </option>
+            @endforeach
+            </select>
+        </div>
+        <input name="assignbed" type="hidden" value="TRUE">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Assign a Bed</button>
+        </div>
+    </form>
+    @else
+    <form method="POST" action="/clients/assignbed" class="client-form">
+        {{ csrf_field() }} {{-- token that protects the form --}}
+        <input name="shelterid" type="hidden" value="{{ $client->shelter_resource_id }}">
+        <input name="clientid" type="hidden" value="{{ $client->UUID }}">
+        <input name="assignbed" type="hidden" value="FALSE">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Done with Bed</button>
+        </div>
+    </form>
+    @endif
+
+
 </div>
 @endsection

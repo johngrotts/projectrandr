@@ -29,7 +29,7 @@
                 <div class="col-md-1"><h4>Accepts Children?</h4></div>
                 <div class="col-md-1"><h4>Accepts Men?</h4></div>
                 <div class="col-md-1"><h4>Accepts Women?</h4></div>
-                <div class="col-md-1"><h4>Vetran</h4></div>
+                <div class="col-md-1"><h4>Veteran</h4></div>
                 <div class="col-md-1"><h4>Disability</h4></div>
                 <div class="col-md-3">@if($facility->shelterResource->total_beds - $facility->shelterResource->filled_beds > 0)Yes @else No @endif</div>
                 <div class="col-md-2">{{ $facility->shelterResource->total_beds }}</div>

@@ -43,6 +43,11 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+                    @if (!Auth::guest())
+                        <li><a href="{{ url('/clients/search') }}">Search for a Client</a></li>
+                        <li><a href="{{ url('/facilities') }}">Facilities</a></li>
+                    @endif
+                        <li><a href="{{ url('/maps') }}">Map</a></li>
                         &nbsp;
                     </ul>
 
@@ -59,8 +64,10 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ url('/facilities') }}">Facilities</a>
-                                    </li>
+                                    <li><a href="{{ url('/clients/search') }}">Search for a Client</a></li>
+                                    <li><a href="{{ url('/facilities') }}">Facilities</a></li>
+                                    <li><a href="{{ url('/clients') }}">Clients</a></li>
+                                    <li><a href="{{ url('/clients/create') }}">Add a Client</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
